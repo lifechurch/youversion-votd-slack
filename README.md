@@ -1,31 +1,66 @@
-![Logo of the project](./images/logo.sample.png)
-
 # YouVersion Verse Of The Day Slack Bot &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://github.com/lifechurch/youversion-votd-slack/blob/master/LICENSE)
 > An [Open Digerati Project](https://opendigerati.com/)
 
-A brief description of your project, what it is used for.
+The YouVersion Verse Of The Day Slack Bot can be used to bring the daily word of God into your slack workspace.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+> Coming Soon!
 
-```shell
-commands here
-```
+Follow Slack's installing apps guideline found [here](https://slack.com/help/articles/202035138-add-an-app-to-your-workspace#install-apps)
 
-Here you should say what actually happens when you execute the code above.
+Be sure to search for `YouVersion` in the [Slack App Directory](https://my.slack.com/apps)
 
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+---
+
+#### Slack bot
+
+* Python3.6
+* [Python slackclient](https://github.com/slackapi/python-slackclient)
+* [YouVersion API Client](https://github.com/jyksnw/yv-api-python)
+
+#### Front-end
+
+* TBD
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+---
 
+You will need a YouVersion Developer API Token. This can be obtained from the [YouVersion API Developer Portal](https://developers.youversion.com/). Sign in with your existing YouVersion account. Please head over to https://my.bible.com/sign-in if you do not currently have a YouVersion account or if you log into YouVersion using Google or Facebook. 
+
+*Note: Currently the YouVersion API Developer Portal does not support Google or Facebook sign in.*
+
+| *TODO*: Add instructions for obtaining Slack Bot token (either via OAth or directly through slack [ref](https://slack.dev/python-slackclient/auth.html)) 
+
+You will also want to be sure to install the latest version of Python 3.6. If you on Linux (including Windows Subsytem for Linux) or macOS the suggested way to install is to use a tool called [pyenv](https://github.com/pyenv/pyenv). If on Windows, head over to [Python.org](https://www.python.org/downloads/) and download the latest version of Python 3.6 for Windows (at the time of writing this is version 3.6.9)
+
+To get setup with [pyenv](https://github.com/pyenv/pyenv) run the following (lines starting with `$>` are commands to be run. Do not include the `$>` when running the command):
+
+```bash
+# Install pyenv if not already installed
+$> curl https://pyenv.run | bash
+
+# Verify pyenv was installed (note the version may be different for you)
+$> pyenv --version
+pyenv 1.2.14
+
+# Verify all dependencies for pyenv have been met. Install any unmet dependcies with the system package manager (apt, yum, brew, etc...)
+$> pyenv doctor
+
+# Initialize pyenv and follow any intialization steps such as adding pyenv to your PATH
+$> pyenv init
+
+# Install Python (at the time of writting the project is targetting version 3.6.9 for development)
+$> pyenv install 3.6.9
+```
+
+You will need an integrated developer environment (IDE) to do development work in. We suggest using [Visual Studio Code](https://code.visualstudio.com/) with the [Python plugin](https://code.visualstudio.com/docs/languages/python) installed. There is a convience script in the `scripts` directory of this project that be used to install all the suggested Visual Studio Code plugins for the project.
 
 ### Setting up Dev
+---
 
 Here's a brief intro about what a developer must do in order to start developing
 the project further:
