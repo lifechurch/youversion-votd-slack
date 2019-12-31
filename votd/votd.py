@@ -9,13 +9,40 @@ import json
 
 def construct_message(content):
   data = json.loads(content)
+  blocks = []
 
-  return data["verse"]["text"]
+  image_url = f'https:{data["image"]["url"]}'
+  reference = f'<{data["verse"]["url"]}|{data["verse"]["human_reference"]}>'
 
-def send_message(client, message):
+  section_mrkdwn = f'{data["verse"]["text"]}\n{reference}'
+
+  blocks.append({
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*VERSE OF THE DAY*"
+			}
+		})
+
+  blocks.append({
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": section_mrkdwn
+    },
+    "accessory": {
+				"type": "image",
+				"image_url": image_url,
+				"alt_text": "VOTD Image"
+			}
+  })
+
+  return blocks
+
+def send_message(client, blocks):
   client.chat_postMessage(
     channel="youversion-votd-test",
-    text=message
+    blocks=blocks
   )
 
 def get_votd():
