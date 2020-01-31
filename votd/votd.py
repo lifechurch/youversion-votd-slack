@@ -5,6 +5,8 @@ import slack
 import os
 import requests
 import json
+import ssl as ssl_lib
+import certifi
 
 
 def construct_message(content):
